@@ -2,6 +2,7 @@ require("config.lazy")
 require("config.harpoon")
 require("plugins.small_terminal")
 require("plugins.floating_terminal")
+_G.terminal_state = require('config.terminal_state')
 
 vim.opt.shiftwidth = 4
 vim.opt.clipboard = "unnamedplus"
