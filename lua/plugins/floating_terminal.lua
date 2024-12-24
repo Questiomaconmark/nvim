@@ -53,5 +53,7 @@ end
 
 vim.api.nvim_create_user_command("FloatTerminal", toggle_terminal, {})
 vim.keymap.set("n", "<space>tt", toggle_terminal)
+vim.keymap.set({ "n", "t" }, "<C-\\>", toggle_terminal)
+
 
 return M
