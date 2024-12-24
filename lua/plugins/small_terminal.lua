@@ -1,7 +1,8 @@
 local M = {}
-term_bufnr = nil
 
-function toggle_terminal()
+local term_bufnr = nil
+
+local function toggle_small_terminal()
 	if term_bufnr and vim.api.nvim_buf_is_valid(term_bufnr) then
 		local term_winid = vim.fn.win_getid(vim.fn.bufwinid(term_bufnr))
 
@@ -23,5 +24,7 @@ function toggle_terminal()
 end
 
 -- Map <space>st to the toggle_terminal function
-vim.api.nvim_set_keymap('n', '<space>st', ':lua toggle_terminal()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_create_user_command("SmallTerminal", toggle_small_terminal, {})
+vim.keymap.set('n', '<space>st', toggle_small_terminal, { noremap = true, silent = true })
 return M
