@@ -22,6 +22,7 @@ local function toggle_small_terminal()
 end
 
 vim.api.nvim_create_user_command("SmallTerminal", toggle_small_terminal, {})
-vim.keymap.set('n', '<space>st', toggle_small_terminal, { noremap = true, silent = true })
+vim.keymap.set({ "n", "t" }, "<C-_", toggle_small_terminal)
+vim.keymap.set({ 'n', 't' }, '<C-_>', toggle_small_terminal, { noremap = true, silent = true })
 
 return M

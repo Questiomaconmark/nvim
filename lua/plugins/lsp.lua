@@ -20,7 +20,11 @@ return {
 			require("lspconfig").lua_ls.setup { capabilities = capabilities }
 			require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
 			require 'lspconfig'.ruby_lsp.setup { capabilities = capabilities }
+			require 'lspconfig'.rubocop.setup {}
 			require 'lspconfig'.clangd.setup { capabilities = capabilities }
+			require 'lspconfig'.pyright.setup {}
+			require 'lspconfig'.r_language_server.setup {}
+			require 'lspconfig'.bashls.setup {}
 
 
 			vim.api.nvim_create_autocmd('LspAttach', {
